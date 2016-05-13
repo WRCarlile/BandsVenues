@@ -85,27 +85,26 @@ public class BandTest {
     assertTrue(myVenue.equals(savedVenue));
   }
 
-//   @Test
-//   public void getVenues_returnsAllVenues_List() {
-//     Venue myVenue = new Venue("Household chores");
-//     myVenue.save();
-//     Band myBand = new Band("The Beatles", "Rock");
-//     myBand.save();
-//     myBand.addVenue(myVenue);
-//     List savedVenues = myBand.getVenues();
-//     assertEquals(1, savedVenues.size());
-//   }
-//
-//   @Test
-//   public void delete_deletesAllBandsAndVenuesAssociations() {
-//     Venue myVenue = new Venue("Household chores");
-//     myVenue.save();
-//     Band myBand = new Band("The Beatles", "Rock");
-//     myBand.save();
-//     myBand.addVenue(myVenue);
-//     myBand.delete();
-//     assertEquals(0, myVenue.getBands().size());
-//   }
-//
-//
+  @Test
+  public void getVenues_returnsAllVenues_List() {
+    Venue myVenue = new Venue("CBGBs", "555 Elm");
+    myVenue.save();
+    Band myBand = new Band("The Beatles", "Rock");
+    myBand.save();
+    myBand.addVenue(myVenue);
+    List savedVenues = myBand.getVenues();
+    assertEquals(1, savedVenues.size());
+  }
+
+  @Test
+  public void delete_deletesAllBandsAndVenuesAssociations() {
+    Venue myVenue = new Venue("CBGBs", "555 Elm");
+    myVenue.save();
+    Band myBand = new Band("The Beatles", "Rock");
+    myBand.save();
+    myBand.addVenue(myVenue);
+    myBand.delete();
+    assertEquals(0, myVenue.getBands().size());
+  }
+
 }
