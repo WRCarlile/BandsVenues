@@ -9,7 +9,7 @@ public class Venue {
   private String address;
 
 
-  public Venue(String venue_name) {
+  public Venue(String venue_name, String address) {
     this.venue_name = venue_name;
     this.address = address;
   }
@@ -27,7 +27,7 @@ public class Venue {
   }
 
   public static List<Venue> all() {
-    String sql = "SELECT id, venue_name FROM venues";
+    String sql = "SELECT id, venue_name, address FROM venues";
     try(Connection con = DB.sql2o.open()) {
       return con.createQuery(sql).executeAndFetch(Venue.class);
     }

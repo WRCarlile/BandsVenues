@@ -14,7 +14,7 @@ practice in java, gradle, velocity, and sparkJava
 * _Navigate back to the directory where this repository has been cloned and run gradle:_
 * _CREATE DATABASE band_tracker;_
 * _\c band_tracker;_
-* _CREATE TABLE venues (id serial PRIMARY KEY, name varchar, address varchar);_
+* _CREATE TABLE venues (id serial PRIMARY KEY, venue_name varchar, address varchar);_
 * _CREATE TABLE bands (id serial PRIMARY KEY, band_name varchar, genre varchar);_
 * _CREATE TABLE venues_bands (id serial PRIMARY KEY, venue_id int, band_id int);_
 * _CREATE DATABASE band_tracker_test WITH TEMPLATE band_tracker;_
