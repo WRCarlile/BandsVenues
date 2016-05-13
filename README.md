@@ -1,5 +1,5 @@
 # Band Tracker
-practice in java
+Independent Project written in Java Using the Spark Microframework.
 
 ## Description
 
