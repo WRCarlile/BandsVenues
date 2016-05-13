@@ -2,6 +2,7 @@ import java.util.HashMap;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
+import java.util.ArrayList;
 
 public class App {
   public static void main(String[] args) {
@@ -54,11 +55,16 @@ public class App {
     }, new VelocityTemplateEngine());
 
     post("/add_bands", (request, response) -> {
-      int bandId = Integer.parseInt(request.queryParams("band_id"));
+      String[] checkBoxBands = request.queryParamsValues("band_id");
       int venueId = Integer.parseInt(request.queryParams("venue_id"));
       Venue venue = Venue.find(venueId);
-      Band band = Band.find(bandId);
-      venue.addBand(band);
+
+      for (String band: checkBoxBands){
+        System.out.pl(band);
+      }
+
+
+
       response.redirect("/venues/" + venueId);
       return null;
     });

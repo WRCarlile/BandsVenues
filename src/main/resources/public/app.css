@@ -3,5 +3,10 @@ body {
 }
 
 h1 {
-  margin: 150px 0px 0px 50px;
+  margin: 150px 0px 20px 0px;
+}
+
+ul {
+  float:center;
+  list-style-position: inside;
 }
