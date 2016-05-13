@@ -93,27 +93,27 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("<li>");
     assertThat(pageSource()).contains("CBGBs");
   }
-//   @Test
-//   public void bandBandNameIsUpdated() {
-//     Band testBand = new Band("The Beatles", "Rock");
-//     testBand.save();
-//     String url = String.format("http://localhost:4567/bands/%d", testBand.getId());
-//     goTo(url);
-//     click("a", withText("Edit this band"));
-//     fill("#band_name").with("Go out dancing");
-//     submit(".btn");
-//     goTo(url);
-//     assertThat(pageSource()).contains("Go out dancing");
-//   }
-//
-//   @Test
-//   public void bandIsDeleted() {
-//     Band testBand = new Band("The Beatles", "Rock");
-//     testBand.save();
-//     String url = String.format("http://localhost:4567/bands/%d", testBand.getId());
-//     goTo(url);
-//     submit("#delete");
-//     goTo(url);
-//     assertThat(pageSource()).contains("$band.getBandName()");
-//   }
+  @Test
+  public void bandBandNameIsUpdated() {
+    Band testBand = new Band("The Beatles", "Rock");
+    testBand.save();
+    String url = String.format("http://localhost:4567/bands/%d", testBand.getId());
+    goTo(url);
+    click("a", withText("Edit this band"));
+    fill("#band_name").with("The Rolling Stones");
+    submit(".btn");
+    goTo(url);
+    assertThat(pageSource()).contains("The Rolling Stones");
+  }
+
+  @Test
+  public void bandIsDeleted() {
+    Band testBand = new Band("The Beatles", "Rock");
+    testBand.save();
+    String url = String.format("http://localhost:4567/bands/%d", testBand.getId());
+    goTo(url);
+    submit("#delete");
+    goTo(url);
+    assertThat(pageSource()).contains("$band.getBandName()");
+  }
 }
