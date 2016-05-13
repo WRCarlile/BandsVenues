@@ -18,6 +18,10 @@ public class Venue {
     return venue_name;
   }
 
+  public String getAddress() {
+    return address;
+  }
+
   public int getId() {
     return id;
   }
@@ -45,7 +49,7 @@ public class Venue {
       String sql = "INSERT INTO venues(venue_name, address) VALUES (:venue_name, :address)";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("venue_name", this.venue_name)
-        .addParameter("address", this.getIsCompleted())
+        .addParameter("address", this.address)
         .executeUpdate()
         .getKey();
     }

@@ -2,7 +2,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-archivesBaseName = "todo-database-example"
+archivesBaseName = "band_tracker"
 version = '1.0'
 mainClassName = "App"
 

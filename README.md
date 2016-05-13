@@ -1,7 +1,7 @@
-# ToDoListDataBase
+# Band Tracker
 practice in java
 
-## BandName
+## Description
 
 practice in java, gradle, velocity, and sparkJava
 
@@ -12,6 +12,12 @@ practice in java, gradle, velocity, and sparkJava
 * _[Install gradle](http://codetutr.com/2013/03/23/how-to-install-gradle/)_
 
 * _Navigate back to the directory where this repository has been cloned and run gradle:_
+* _CREATE DATABASE band_tracker;_
+* _\c band_tracker;_
+* _CREATE TABLE venues (id serial PRIMARY KEY, name varchar, address varchar);_
+* _CREATE TABLE bands (id serial PRIMARY KEY, band_name varchar, genre varchar);_
+* _CREATE TABLE venues_bands (id serial PRIMARY KEY, venue_id int, band_id int);_
+* _CREATE DATABASE band_tracker_test WITH TEMPLATE band_tracker;_
 ```
 $ gradle run
 ```

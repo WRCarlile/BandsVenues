@@ -8,8 +8,9 @@ public class Band {
   private String genre;
 
 
-  public Band(String band_name, S) {
+  public Band(String band_name, String genre) {
     this.band_name = band_name;
+    this.genre = genre;
   }
 
   public String getBandName() {
