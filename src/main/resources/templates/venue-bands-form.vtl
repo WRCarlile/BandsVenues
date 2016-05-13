@@ -1,0 +1,12 @@
+<p>Add a band to $venue.getName()</p>
+
+<form action="/bands" method="post">
+  <input id="venueId" name="venueId" type="hidden" value="$venue.getId()">
+
+  <div class="form-group">
+    <label for="band_name">BandName</label>
+    <input id="band_name" name="band_name" type="text" class="form-control">
+  </div>
+
+  <button type="submit" class="btn btn-success">Add Band</button>
+</form>
