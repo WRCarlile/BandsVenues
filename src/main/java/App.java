@@ -58,13 +58,9 @@ public class App {
       String[] checkBoxBands = request.queryParamsValues("band_id");
       int venueId = Integer.parseInt(request.queryParams("venue_id"));
       Venue venue = Venue.find(venueId);
-
-      for (String band: checkBoxBands){
-        System.out.pl(band);
+      for (int i = 0; i < checkBoxBands.length; i++){
+        venue.addBand(Band.find(Integer.parseInt(checkBoxBands[i])));
       }
-
-
-
       response.redirect("/venues/" + venueId);
       return null;
     });
