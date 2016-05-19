@@ -65,11 +65,12 @@ public class Band {
     }
   }
 
-  public void update(String newBandName) {
+  public void update(String newBandName, String newGenre) {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "UPDATE bands SET band_name = :band_name WHERE id = :id";
+      String sql = "UPDATE bands SET band_name = :band_name, genre = :genre WHERE id = :id";
       con.createQuery(sql)
         .addParameter("band_name", newBandName)
+        .addParameter("genre", newGenre)
         .addParameter("id", this.id)
         .executeUpdate();
     }

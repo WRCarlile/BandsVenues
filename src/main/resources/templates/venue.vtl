@@ -1,4 +1,5 @@
 <h1>$venue.getName()</h1>
+<h2>$venue.getAddress()</h2>
 
 #if($venue.getBands())
   <p>Here are the bands that have played $venue.getName():</p>
@@ -14,16 +15,18 @@
 <form action='/add_bands' method='post'>
   <input id="venue_id" name="venue_id" type="hidden" value="$venue.getId()">
   <label for="band_id">Select a band</label>
-  <!-- <select id='band_id' name='band_id' type='text'> -->
+
     #foreach($band in $allBands)
       <input id='band_id' name='band_id' type="checkbox" value="$band.getId()"> $band.getBandName() </input>
     #end
-  <!-- </select> -->
+
   <button type="submit" id="selectBand" class="btn btn-info">Add band to this venue</button>
 </form>
 
 <form action="/venues/$venue.getId()/edit" method="post">
-  <label for="venueName">Venue Name</label>
+  <label for="newVenueName">Venue Name</label>
+  <input id="newVenueName" name="newVenueName" type="text">
+  <label for="newAddress">New Address</label>
   <input id="venueName" name="venueName" type="text">
   <button type="submit" class="btn btn-info" id="update-venue">Update Venue</button>
 </form>
@@ -32,8 +35,6 @@
   <button type="submit" class="btn btn-danger" id="delete-venue">Delete Venue</button>
 </form>
 
-<form action="/venues/$venue.getId()/complete" method="post">
-  <button type="submit" class="btn btn-danger" id="complete-venue">complete Venue</button>
-</form>
+
 
 <p><a href="/">Home</a></p>

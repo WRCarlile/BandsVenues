@@ -61,7 +61,7 @@ public class BandTest {
   public void update_updatesBandBandName_true() {
     Band myBand = new Band("The Beatles", "Rock");
     myBand.save();
-    myBand.update("The Rolling Stones");
+    myBand.update("The Rolling Stones", "Roll");
     assertEquals("The Rolling Stones", Band.find(myBand.getId()).getBandName());
   }
 

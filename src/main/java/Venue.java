@@ -97,11 +97,12 @@ public class Venue {
     }
   }
 
-  public void update(String newName) {
+  public void update(String newName, String newAddress) {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "UPDATE venues SET venue_name = :newName WHERE id = :id";
+      String sql = "UPDATE venues SET venue_name = :newName, address = :newAddress WHERE id = :id";
       con.createQuery(sql)
         .addParameter("newName", newName)
+        .addParameter("address", address)
         .addParameter("id", this.id)
         .executeUpdate();
     }
