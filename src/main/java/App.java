@@ -40,17 +40,6 @@ public class App {
       return null;
     });
 
-    post("/venues/:id/edit", (request, response) -> {
-      HashMap<String, Object> model = new HashMap<String, Object>();
-      Venue venueId = Venue.find(Integer.parseInt(request.params("id")));
-      String newVenueName = request.queryParams("newVenueName");
-      String newAddress = request.queryParams("newAddress");
-      venueId.update(newVenueName, newAddress);
-      String url = String.format("/venues/%d", venueId.getId());
-      response.redirect(url);
-      return new ModelAndView(model, layout);
-    }, new VelocityTemplateEngine());
-
     post("/venues/:id/delete", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       Venue venue = Venue.find(Integer.parseInt(request.params("id")));

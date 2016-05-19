@@ -23,14 +23,6 @@
   <button type="submit" id="selectBand" class="btn btn-info">Add band to this venue</button>
 </form>
 
-<form action="/venues/$venue.getId()/edit" method="post">
-  <label for="newVenueName">Venue Name</label>
-  <input id="newVenueName" name="newVenueName" type="text">
-  <label for="newAddress">New Address</label>
-  <input id="venueName" name="venueName" type="text">
-  <button type="submit" class="btn btn-info" id="update-venue">Update Venue</button>
-</form>
-
 <form action="/venues/$venue.getId()/delete" method="post">
   <button type="submit" class="btn btn-danger" id="delete-venue">Delete Venue</button>
 </form>
